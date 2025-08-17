@@ -1,0 +1,46 @@
+{
+    "name": "telekeeper_bot",
+    "dockerComposeFile": "compose.yml",
+    "service": "bot",
+    "workspaceFolder": "/workspace",
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    },
+    "containerEnv": {},
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [],
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Continue.continue",
+                "pbkit.vscode-pbkit",
+                "ZencoderAI.zencoder"
+            ],
+            "settings": {
+                "editor.formatOnType": true,
+                "editor.formatOnSave": true,
+                "files.autoSave": "afterDelay",
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true,
+                "files.trimFinalNewlines": true,
+                "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+                "zencoder.inlineSuggestions.enable": false,
+                "python.defaultInterpreterPath": "/usr/bin/python3",
+                "python.analysis.typeCheckingMode": "strict",
+                "[python]": {
+                    "editor.tabSize": 4,
+                    "editor.insertSpaces": true,
+                    "editor.defaultColorDecorators": "never",
+                    "editor.semanticHighlighting.enabled": true,
+                    "editor.wordBasedSuggestions": "off"
+                }
+            }
+        }
+    },
+    // Uncomment to connect as root instead. More info: https://containers.dev/implementors/json_reference/#remoteUser.
+    // "remoteUser": "root",
+    // "onCreateCommand": ".devcontainer/on-create.sh",
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt"
+}

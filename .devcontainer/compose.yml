@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  bot:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    working_dir: /workspace
+    ports:
+      - "8000:8000"
+    command: sleep infinity

@@ -177,3 +177,8 @@ pyrightconfig.json
 
 /.zencoder/rules/*
 !/.zencoder/rules/.keep
+
+.dockerignore
+/Dockerfile*
+
+.devcontainer/
